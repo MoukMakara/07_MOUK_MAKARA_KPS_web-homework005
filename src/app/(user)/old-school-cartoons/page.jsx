@@ -1,7 +1,7 @@
 import React from "react";
-import Image from "next/image";
-import proflie from "../../../public/profile.png";
-import eye from "../../../public/eye.svg";
+// import Image from "next/image";
+// import proflie from "../../../../public/profile.png";
+// import eye from "../../../../public/eye.svg";
 import CardBookComponent from "@/components/CardBookComponent";
 import { getAllCartoons } from "@/services/bookService";
 import CardOldSchoolCartoon from "@/components/CardOldSchoolCartoonComponent";

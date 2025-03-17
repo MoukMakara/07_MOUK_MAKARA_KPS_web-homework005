@@ -15,8 +15,8 @@ const CardBookComponent = ({ bookItem }) => {
                 alt="Book Cover"
                 className="absolute object-cover -top-20 w-[176px] h-[221px] shadow-md rounded-lg"
               />
-              <Link href={`/book-categories/${books.id}`}>
-                <button className="mt-36 w-[176px] py-2 bg-blue-100 text-blue-600 text-[14px] font-semibold rounded-3xl">
+              <Link href={`/read-full-article/${books.id}/book`}>
+                <button className="mt-36 cursor-pointer w-[176px] py-2 bg-blue-100 text-blue-600 text-[14px] font-semibold rounded-3xl">
                   READ FULL ARTICLE
                 </button>
               </Link>

@@ -40,18 +40,6 @@ export const getBookCategoryById = async (id) => {
   }
 };
 
-export const getBookById = async (id) => {
-  try {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/book/${id}`
-    );
-    const data = await response.json();
-    return data.payload || null;
-  } catch (error) {
-    console.error("Error fetching book:", error);
-  }
-};
-
 // Get all cartoons
 export const getAllCartoons = async () => {
   try {
@@ -65,15 +53,69 @@ export const getAllCartoons = async () => {
     console.error("Error fetching cartoons:", error);
   }
 };
-// Get cartoon by id
-export const getOldSchoolCartoonById = async (id) => {
+// // get Book By Id
+// export const getBookById = async (id) => {
+//   try {
+//     const response = await fetch(
+//       `${process.env.NEXT_PUBLIC_BASE_URL}/book/${id}`
+//     );
+//     const data = await response.json();
+//     return data.payload || null;
+//   } catch (error) {
+//     console.error("Error fetching book:", error);
+//   }
+// };
+
+// // Get cartoon by id
+// export const getOldSchoolCartoonById = async (id) => {
+//   try {
+//     const response = await fetch(
+//       `${process.env.NEXT_PUBLIC_BASE_URL}/cartoon/${id}`
+//     );
+//     const data = await response.json();
+//     return data.payload || null;
+//   } catch (error) {
+//     console.error("Error fetching cartoon:", error);
+//   }
+// };
+
+// export const getItemById = async (id, type) => {
+//   try {
+//     let url = `${process.env.NEXT_PUBLIC_BASE_URL}/${id}/${type}`;
+
+//     if (type === "book") {
+//       url = `${process.env.NEXT_PUBLIC_BASE_URL}/book/${id}`;
+//     } else if (type === "cartoon") {
+//       url = `${process.env.NEXT_PUBLIC_BASE_URL}/cartoon/${id}`;
+//     }
+
+//     const response = await fetch(url);
+
+//     const data = await response.json();
+//     return data.payload || null;
+//   } catch (error) {
+//     console.error(`Error fetching ${type}:`, error);
+//     return null;
+//   }
+// };
+
+export const getItemById = async (id, type) => {
   try {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/cartoon/${id}`
-    );
+    let url = `${process.env.NEXT_PUBLIC_BASE_URL}/${id}/${type}`;
+
+    if (type === "book") {
+      url = `${process.env.NEXT_PUBLIC_BASE_URL}/book/${id}`;
+    } else if (type === "cartoon") {
+      url = `${process.env.NEXT_PUBLIC_BASE_URL}/cartoon/${id}`;
+    }
+
+    const response = await fetch(url);
     const data = await response.json();
+    console.log("daada", data);
+
     return data.payload || null;
   } catch (error) {
-    console.error("Error fetching cartoon:", error);
+    console.error(`Error fetching ${type}:`, error);
+    return null;
   }
 };

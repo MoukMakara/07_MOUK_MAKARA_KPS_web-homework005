@@ -13,7 +13,7 @@ const CardOldSchoolCartoonComponent = ({ oldSchoolCartoon }) => {
             key={index}
             className="w-[330px] mb-6 rounded-xl dark:bg-gray-800 dark:border-gray-700"
           >
-            <Link href={`/old-school-cartoons/${items.id}`}>
+            <Link href={`/read-full-article/${items.id}/cartoon`}>
               <img
                 className="rounded-2xl w-full object-cover h-[404px]"
                 src={items.image}
@@ -28,7 +28,8 @@ const CardOldSchoolCartoonComponent = ({ oldSchoolCartoon }) => {
                 <article className="flex justify-around items-center mt-2">
                   <p className="flex gap-2 mb-3 font-normal text-[#087E8B] dark:text-gray-400">
                     <Image className="opacity-90" src={eye} alt="" />
-                    {items.view_count} | {items.published_year}
+                    {items.view_count} |{" "}
+                    {new Date(items.published_year).getFullYear()}
                   </p>
                 </article>
               </div>
