@@ -1,14 +1,21 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import proflie from "../../public/profile.png";
 import eye from "../../public/eye.svg";
 import Link from "next/link";
 
-const CardOldSchoolCartoonComponent = ({ oldSchoolCartoon }) => {
+const CardOldSchoolCartoonComponent = ({ oldSchoolCartoons }) => {
+  const [searchResults, setSearchResults] = useState([]);
+
+  useEffect(() => {
+    setSearchResults(oldSchoolCartoons);
+  }, [oldSchoolCartoons]);
+
   return (
     <div className="flex flex-wrap justify-around h-screen mt-28 gap-10">
-      {oldSchoolCartoon.map((items, index) => {
-        return (
+      {searchResults.length > 0 ? (
+        searchResults.map((items, index) => (
           <div
             key={index}
             className="w-[330px] mb-6 rounded-xl dark:bg-gray-800 dark:border-gray-700"
@@ -17,7 +24,7 @@ const CardOldSchoolCartoonComponent = ({ oldSchoolCartoon }) => {
               <img
                 className="rounded-2xl w-full object-cover h-[404px]"
                 src={items.image}
-                alt="Rome, Italty"
+                alt={items.ct_title}
               />
               <div className="py-3 px-1">
                 <article className="flex flex-col justify-start items-center">
@@ -35,8 +42,12 @@ const CardOldSchoolCartoonComponent = ({ oldSchoolCartoon }) => {
               </div>
             </Link>
           </div>
-        );
-      })}
+        ))
+      ) : (
+        <p className="text-center text-gray-500 dark:text-gray-400">
+          No cartoons found.
+        </p>
+      )}
     </div>
   );
 };
