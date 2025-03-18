@@ -2,16 +2,26 @@ import React from "react";
 import CardBookComponent from "@/components/CardBookComponent";
 import { getAllBookCategories, getAllBooks } from "@/services/bookService";
 import SearchComponent from "@/components/SearchComponent";
-import NavbarFilterComponent from "@/components/NavbarFilterComponent";
+import NavbarFilterBookComponent from "@/components/NavbarFilterBookComponent";
 
-const BookPage = async () => {
+const BookPage = async ({ searchParams }) => {
   // get all books from api
   const books = await getAllBooks();
   console.log("books: ", books);
 
-  // Get all book categories
-  const bookCategories = await getAllBookCategories();
-  console.log("book categories: ", bookCategories);
+  // search books by title
+  const searchQuery = searchParams.search || "";
+
+  // search
+  let bookSearchs;
+  if (searchQuery) {
+    bookSearchs = books.filter((book) =>
+      book.book_title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    console.log("search results: ", bookSearchs);
+  } else {
+    bookSearchs = books;
+  }
 
   return (
     <div className="p-4 sm:ml-80">
@@ -22,13 +32,13 @@ const BookPage = async () => {
 
         <div className="relative mt-4 flex items-center justify-center h-screen mb-4 rounded-sm  dark:bg-gray-800">
           {/* content */}
-          <NavbarFilterComponent />
+          <NavbarFilterBookComponent />
 
           {/* hr */}
           <hr className="absolute w-full top-16  border-gray-200 dark:border-gray-700" />
 
           <div className="mt-28 ">
-            <CardBookComponent bookItem={books} />
+            <CardBookComponent books={bookSearchs} />
           </div>
         </div>
       </div>

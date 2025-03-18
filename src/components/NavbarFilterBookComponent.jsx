@@ -1,7 +1,8 @@
 import { getAllBookCategories } from "@/services/bookService";
 import React from "react";
 
-const NavbarFilterComponent = async () => {
+const NavbarFilterBookComponent = async () => {
+  // Get all book categories
   const bookCategories = await getAllBookCategories();
   console.log("book categories: ", bookCategories);
   return (
@@ -31,4 +32,4 @@ const NavbarFilterComponent = async () => {
   );
 };
 
-export default NavbarFilterComponent;
+export default NavbarFilterBookComponent;

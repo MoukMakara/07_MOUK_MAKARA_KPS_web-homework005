@@ -27,6 +27,22 @@ export const getAllBookCategories = async () => {
     console.error("Error fetching book categories:", error);
   }
 };
+// /api/cartoon_genre
+// Get all cartoon genres(categories)
+export const getAllCartoonsCategories = async () => {
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/cartoon_genre`
+    );
+    const data = await response.json();
+    console.log("all cartoon genres: ", data);
+    console.log("all cartoon genres payload: ", data.payload);
+    return data.payload || [];
+  } catch (error) {
+    console.error("Error fetching cartoon genres:", error);
+  }
+};
+
 // Get book category by id
 // export const getBookCategoryById = async (id) => {
 //   try {

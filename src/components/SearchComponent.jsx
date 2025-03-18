@@ -1,11 +1,23 @@
 "use client";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const SearchComponent = () => {
+  const router = useRouter();
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const searchData = e.target.elements["default-search"].value;
+
+    if (searchData) {
+      router.push(`/book-categories?search=${encodeURIComponent(searchData)}`);
+    } else {
+      router.push(`/book-categories`);
+    }
+  };
   return (
     <>
       <div className="">
-        <form className="relative w-full">
+        <form className="relative w-full" onSubmit={handleSearch}>
           {" "}
           <button
             type="button"
@@ -29,6 +41,7 @@ const SearchComponent = () => {
           {/* Search input */}
           <input
             id="searchInput"
+            name="default-search"
             type="text"
             placeholder="Search assignment here"
             className="w-full bg-white py-3 pl-14 pr-5 rounded-xl h-12 border-none focus:ring-0 focus:outline-custom-sky-blue"
