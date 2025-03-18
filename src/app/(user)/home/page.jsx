@@ -1,5 +1,6 @@
 import BookCategoriesComponent from "@/components/BookCategoriesComponent";
 import OldSchoolCartoonsComponent from "@/components/OldSchoolCartoonsComponent";
+import SearchComponent from "@/components/SearchComponent";
 import React from "react";
 
 const HomePageComponent = () => {
@@ -31,40 +32,7 @@ const HomePageComponent = () => {
       <div className="p-4 sm:ml-80">
         <div className="p-4 border-gray-200 rounded-lg dark:border-gray-700">
           <div className="w-full">
-            {/* search bar width 100% */}
-            <div className="">
-              <form className="relative w-full">
-                {" "}
-                {/* Change w-9/12 to w-full */}
-                {/* Search button */}
-                <button
-                  type="button"
-                  className="cursor-pointer absolute top-3 left-4"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6 text-primary-text"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M21 21l-4.35-4.35m2.35-6.65a7 7 0 11-14 0 7 7 0 0114 0z"
-                    />
-                  </svg>
-                </button>
-                {/* Search input */}
-                <input
-                  id="searchInput"
-                  type="text"
-                  placeholder="Search assignment here"
-                  className="w-full bg-white py-3 pl-14 pr-5 rounded-xl h-12 border-none focus:ring-0 focus:outline-custom-sky-blue"
-                />
-              </form>
-            </div>
+            <SearchComponent />
           </div>
 
           <div className="relative mt-4 flex items-center justify-center h-screen mb-4 rounded-sm bg-gray-50 dark:bg-gray-800">
