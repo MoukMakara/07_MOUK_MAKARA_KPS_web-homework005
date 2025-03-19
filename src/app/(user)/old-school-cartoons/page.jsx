@@ -6,7 +6,7 @@ import CardBookComponent from "@/components/CardBookComponent";
 import { getAllCartoons } from "@/services/bookService";
 import CardOldSchoolCartoon from "@/components/CardOldSchoolCartoonComponent";
 import SearchComponent from "@/components/SearchComponent";
-import NavbarFilterBookComponent from "@/components/NavbarFilterBookComponent";
+import NavbarFilterBookComponent from "@/components/FilterBookComponent";
 import NavbarFilterCartoonComponent from "@/components/NavbarFilterCartoonComponent";
 import SearchCartoonComponent from "@/components/SearchCartoonComponent";
 

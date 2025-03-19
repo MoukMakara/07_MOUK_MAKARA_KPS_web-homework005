@@ -43,19 +43,6 @@ export const getAllCartoonsCategories = async () => {
   }
 };
 
-// Get book category by id
-// export const getBookCategoryById = async (id) => {
-//   try {
-//     const response = await fetch(
-//       `${process.env.NEXT_PUBLIC_BASE_URL}/api/book_category/search?query=${id}`
-//     );
-//     const data = await response.json();
-//     return data.payload || null;
-//   } catch (error) {
-//     console.error("Error fetching book category:", error);
-//   }
-// };
-
 // Get all cartoons
 export const getAllCartoons = async () => {
   try {
@@ -69,31 +56,6 @@ export const getAllCartoons = async () => {
     console.error("Error fetching cartoons:", error);
   }
 };
-// // get Book By Id
-// export const getBookById = async (id) => {
-//   try {
-//     const response = await fetch(
-//       `${process.env.NEXT_PUBLIC_BASE_URL}/book/${id}`
-//     );
-//     const data = await response.json();
-//     return data.payload || null;
-//   } catch (error) {
-//     console.error("Error fetching book:", error);
-//   }
-// };
-
-// // Get cartoon by id
-// export const getOldSchoolCartoonById = async (id) => {
-//   try {
-//     const response = await fetch(
-//       `${process.env.NEXT_PUBLIC_BASE_URL}/cartoon/${id}`
-//     );
-//     const data = await response.json();
-//     return data.payload || null;
-//   } catch (error) {
-//     console.error("Error fetching cartoon:", error);
-//   }
-// };
 
 export const getItemById = async (id, type) => {
   try {

@@ -2,7 +2,7 @@ import React from "react";
 import CardBookComponent from "@/components/CardBookComponent";
 import { getAllBookCategories, getAllBooks } from "@/services/bookService";
 import SearchComponent from "@/components/SearchComponent";
-import NavbarFilterBookComponent from "@/components/NavbarFilterBookComponent";
+import NavbarFilterBookComponent from "@/components/FilterBookComponent";
 
 const BookPage = async ({ searchParams }) => {
   // get all books from api
