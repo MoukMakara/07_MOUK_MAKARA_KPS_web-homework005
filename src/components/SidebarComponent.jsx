@@ -4,6 +4,13 @@ import proflie from "../../public/profile.png";
 import book from "../../public/book.svg";
 import home from "../../public/home.svg";
 import emoji from "../../public/emoji-happy.svg";
+import movie from "../../public/video.svg";
+import music from "../../public/music.svg";
+import photography from "../../public/camera.svg";
+import sports from "../../public/weight.svg";
+import technology from "../../public/code.svg";
+import airplane from "../../public/airplane.svg";
+import edit from "../../public/edit.svg";
 import Link from "next/link";
 
 const sidebarItems = [
@@ -14,13 +21,13 @@ const sidebarItems = [
     href: "/old-school-cartoons",
     icon: emoji,
   },
-  { name: "Movies & TV Shows", href: "#", icon: book },
-  { name: "Music", href: "#", icon: book },
-  { name: "Photography", href: "#", icon: book },
-  { name: "Sports & Fitness", href: "#", icon: book },
-  { name: "Technology & Gadgets", href: "#", icon: book },
-  { name: "Travel & Exploration", href: "#", icon: book },
-  { name: "Writing & Journaling", href: "#", icon: book },
+  { name: "Movies & TV Shows", href: "#", icon: movie },
+  { name: "Music", href: "#", icon: music },
+  { name: "Photography", href: "#", icon: photography },
+  { name: "Sports & Fitness", href: "#", icon: sports },
+  { name: "Technology & Gadgets", href: "#", icon: technology },
+  { name: "Travel & Exploration", href: "#", icon: airplane },
+  { name: "Writing & Journaling", href: "#", icon: edit },
 ];
 
 const SidebarComponent = () => {

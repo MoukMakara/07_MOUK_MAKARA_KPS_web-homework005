@@ -16,9 +16,24 @@ const SelectCategoriesCartoon = ({ selectCategorieCartoon }) => {
     setSelectedCategory(value);
     console.log("Selected cartoon category ID:", value);
   };
+
+  // Find the selected category name
+  const selectedCategoryName =
+    selectCategorieCartoon.find(
+      (category) => String(category.id) === String(selectedCategory)
+    )?.cartoon_genre || "Old School Cartoons";
+
+  console.log("Selected category name:", selectedCategoryName);
+
   return (
     <div>
       <div>
+        <button
+          type="button"
+          className="absolute left-3 top-3 py-2.5 px-5 me-2 mb-2 text-sm font-medium text-[#087E8B] focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100  focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+        >
+          {selectedCategoryName}
+        </button>
         {/* Button for filtering by category */}
         <select
           value={selectedCategory}
