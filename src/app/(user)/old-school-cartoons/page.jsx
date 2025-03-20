@@ -16,6 +16,7 @@ const OldSchollPage = async ({ searchParams }) => {
 
   // search cartoon by title
   const searchQuery = searchParams.search || "";
+  const searchBookCategories = searchParams.genre;
 
   // search
   let cartoonSearchs;
@@ -26,6 +27,14 @@ const OldSchollPage = async ({ searchParams }) => {
     console.log("search cartoon results: ", cartoonSearchs);
   } else {
     cartoonSearchs = oldSchoolCartoons;
+  }
+
+  // check condition search filters
+  if (searchBookCategories && searchBookCategories.length > 0) {
+    cartoonSearchs = cartoonSearchs.filter(
+      (book) => searchBookCategories == book.ct_genre_id
+    );
+    console.log("filtered results: ", cartoonSearchs);
   }
   return (
     <div className="p-4 sm:ml-80">

@@ -11,6 +11,7 @@ const BookPage = async ({ searchParams }) => {
 
   // search books by title
   const searchQuery = searchParams.search || "";
+  const searchBookCategories = searchParams.query;
 
   // search
   let bookSearchs;
@@ -21,6 +22,13 @@ const BookPage = async ({ searchParams }) => {
     console.log("search results: ", bookSearchs);
   } else {
     bookSearchs = books;
+  }
+  // check condition search filters
+  if (searchBookCategories && searchBookCategories.length > 0) {
+    bookSearchs = bookSearchs.filter(
+      (book) => searchBookCategories == book.book_cate_id
+    );
+    console.log("filtered results: ", bookSearchs);
   }
 
   return (
